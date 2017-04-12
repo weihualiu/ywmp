@@ -1,6 +1,6 @@
 package channelCore
 
-import "github/com/weihualiu/ywmp/services"
+import "github/com/weihualiu/ywmp/src/services"
 
 func init() {
 	//初始化HTTP通道
