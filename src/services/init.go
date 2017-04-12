@@ -4,7 +4,7 @@
 
 package services
 
-import "github.com/weihualiu/ywmp/conf"
+import "github.com/weihualiu/ywmp/src/conf"
 
 var NetSrv *NetService
 

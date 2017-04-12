@@ -4,7 +4,7 @@
 package main
 
 import (
-	"github.com/weihualiu/ywmp/services"
+	"github.com/weihualiu/ywmp/src/services"
 	//_"channelCore"
 	_ "channel" //只执行包init，不引入具体包内容
 	"time"
