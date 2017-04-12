@@ -13,8 +13,8 @@ import (
 	"strings"
 )
 
-import "github.com/weihualiu/ywmp/lib"
-import . "github.com/weihualiu/ywmp/services"
+import "github.com/weihualiu/ywmp/src/lib"
+import . "github.com/weihualiu/ywmp/src/services"
 
 type GenDescFile struct {
 	name   string
