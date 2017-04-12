@@ -1,0 +1,5 @@
+{
+  "RESOURCE_BASE": "/home/liuweihua/workspace/ywmp/tests/offline/",
+  "RESOURCE_TMP": "/home/liuweihua/workspace/ywmp/tests/tmp/",
+  "RESOURCE_PACKBAG": "/home/liuweihua/workspace/ywmp/tests/onlinebag/"
+}

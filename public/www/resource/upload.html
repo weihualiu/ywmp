@@ -1,0 +1,54 @@
+﻿<html>
+    <head>
+        <title>离线资源上传</title>
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript">
+$(function(){
+$("#savefile").on("click", function(){
+		if ($('#zipfile').val() == ""){
+		//Notify.danger("<i class='glyphicon glyphicon-warning-sign'></i> 请选择图片上传", 3);
+		window.alert("请选择图片上传");
+			return;
+		}
+		var formData = new FormData();
+		formData.append('zipfile', $('#zipfile')[0].files[0]);
+		formData.append('envsel', $('#envsel').val());
+		$.ajax({
+			url:'/resource/upload',
+			type:'POST',
+			cache:false,
+			data:formData,
+			processData:false,
+			contentType:false
+		}).done(function(json1){
+			json=eval("("+json1+")");
+			if(json.status == "true"){
+			//Notify.success("<i class='glyphicon glyphicon-warning-sign'></i>"+ json.message, 3);
+			window.alert(json.msg);
+			$('#zipfile').val('');
+			}else{
+			//Notify.danger("<i class='glyphicon glyphicon-warning-sign'></i>"+ json.message, 6);
+			window.alert(json.msg);
+			}
+		},'json').fail(function(){
+			//Notify.danger("<i class='glyphicon glyphicon-warning-sign'></i> 请检查网络", 3);
+			window.alert("请检查网络");
+		})
+	})
+})
+	</script>
+    </head>
+    <body>
+        <form action="/resource/upload" method="post" enctype="multipart/form-data">
+            <label for="envsel">选择环境：</label>
+            <select name="envsel" id="envsel">
+                <option name="sit">SIT</option>
+                <option name="uat">UAT</option>
+                <option name="prd">PRD</option>
+            </select><br /><br />
+            <label>文件名：</label><input type="file" name="zipfile" id="zipfile" /><br /><br />
+            <input type="button" id="savefile" value="上传"/>
+	    <div id="progressNumber"></div>
+        </form>
+    </body>
+</html>
