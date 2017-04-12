@@ -18,10 +18,10 @@ import (
 	"time"
 )
 
-import "github.com/weihualiu/ywmp/lib"
+import "github.com/weihualiu/ywmp/src/lib"
 
 //import resource "channel/resource"
-import . "github.com/weihualiu/ywmp/services"
+import . "github.com/weihualiu/ywmp/src/services"
 
 type Sizer interface {
 	Size() int64
